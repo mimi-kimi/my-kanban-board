@@ -178,4 +178,24 @@ export default function KanbanBoard() {
       </main>
     </DndContext>
   )
+  // Inside your KanbanBoard function...
+
+const handleAddTask = async (columnId: string) => {
+  const content = prompt("What needs to be done?")
+  if (!content) return
+
+  const { error } = await supabase.from('tasks').insert([
+    { 
+      content, 
+      column_id: columnId, 
+      position_index: tasks.length + 1 
+    }
+  ])
+
+  if (error) {
+    alert(error.message)
+  } else {
+    refreshData() // This re-fetches the tasks from Supabase
+  }
+}
 }
