@@ -157,7 +157,7 @@ export default function KanbanBoard() {
     <DndContext sensors={sensors} collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
       <main className="min-h-screen bg-[#0f172a] p-12 text-slate-200">
         <header className="max-w-6xl mx-auto mb-12">
-          <h1 className="text-4xl font-black tracking-tighter text-white">Interactive Pipeline</h1>
+          <h1 className="text-4xl font-black tracking-tighter text-white">Task Management Board</h1>
         </header>
 
         <div className="max-w-7xl mx-auto flex gap-8">
@@ -191,7 +191,7 @@ export default function KanbanBoard() {
       onClick={() => handleAddTask(col.id)} // Reuse your handleAddTask function
       className="mt-2 py-3 rounded-xl border border-dashed border-slate-700 text-slate-500 hover:text-blue-400 transition-all text-xs font-bold"
     >
-      + ADD TO {col.title}
+      + Add {col.title}
     </button>
   </DroppableColumn>
 </SortableContext>  
